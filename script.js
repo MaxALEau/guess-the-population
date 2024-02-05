@@ -15,7 +15,11 @@ function startGame() {
 }
 
 function makeGuess() {
-    const guess = document.getElementById('guess').value;
+    const guessInput = document.getElementById('guess');
+    const guess = guessInput.value;
+    if (guess === '') {
+        return;
+    }
     tries++;
     if (guess == population) {
         document.getElementById('result').textContent = `Correct ! Il y a ${population} habitants à ${commune.nom}.`;
@@ -28,6 +32,7 @@ function makeGuess() {
     } else {
         document.getElementById('result').textContent = `C'est moins. Il vous reste ${maxTries - tries} essais.`;
     }
+    guessInput.value = '';
 }
 
 startGame();
