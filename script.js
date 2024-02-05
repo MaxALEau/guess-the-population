@@ -30,5 +30,11 @@ function makeGuess() {
     }
 }
 
-// Commence le jeu
 startGame();
+
+document.getElementById('guess').addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        makeGuess();
+    }
+});
