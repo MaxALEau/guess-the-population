@@ -15,12 +15,12 @@ function makeGuess() {
     const guess = document.getElementById('guess').value;
     tries++;
     if (guess == population) {
-        document.getElementById('result').textContent = `Correct! La population de la commune ${commune.nom} est ${population}.`;
+        document.getElementById('result').textContent = `Correct ! Il y a ${population} habitants à ${commune.nom}.`;
     } else if (tries >= maxTries) {
-        document.getElementById('result').textContent = `Désolé, vous n'avez pas deviné la population en ${maxTries} essais. La population de la commune ${commune.nom} est ${population}.`;
+        document.getElementById('result').textContent = `Désolé, vous n'avez pas deviné la population en ${maxTries} essais. Il y a ${population} habitants à ${commune.nom}.`;
     } else if (guess < population) {
-        document.getElementById('result').textContent = `Plus grand. Il vous reste ${maxTries - tries} essais.`;
+        document.getElementById('result').textContent = `C'est plus. Il vous reste ${maxTries - tries} essais.`;
     } else {
-        document.getElementById('result').textContent = `Plus petit. Il vous reste ${maxTries - tries} essais.`;
+        document.getElementById('result').textContent = `C'est moins. Il vous reste ${maxTries - tries} essais.`;
     }
 }
